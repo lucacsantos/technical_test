@@ -1,0 +1,54 @@
+<form [formGroup]="userForm" class="container">
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" formControlName="nome" placeholder="Nome" id="nome" required>
+    <label class="text-danger" *ngIf="customeNameValidator(userForm.get('nome'))">
+      {{
+      customeNameValidator(userForm.get('nome'))
+      }}
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="sobreNome">Sobrenome</label>
+    <input type="text" class="form-control" formControlName="sobreNome" placeholder="Sobrenome" id="sobreNome" required>
+    <label class="text-danger" *ngIf="customeLastNameValidator(userForm.get('sobreNome'))">
+      {{
+      customeLastNameValidator(userForm.get('sobreNome'))
+      }}
+    </label>
+
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" formControlName="email" placeholder="Email" id="email" required>
+    <label class="text-danger" *ngIf="customeEmailValidator(userForm.get('email'))">
+      {{
+      customeEmailValidator(userForm.get('email'))
+      }}
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="dataNascimento">Data de Nascimento</label>
+    <input type="date" class="form-control" formControlName="dataNascimento" placeholder="Data de Nascimento"
+      id="dataNascimento" required>
+    <label class="text-danger" *ngIf="customeAgeValidator(userForm.get('dataNascimento'))">
+      {{
+      customeAgeValidator(userForm.get('dataNascimento'))
+      }}
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>Escolaridade</label>
+    <select class="form-control" formControlName="escolaridadeId">
+      <option value="" disabled selected>Selecione sua escolaridade</option>
+      <option value="1">Infantil</option>
+      <option value="2">Fundamental</option>
+      <option value="3">Médio</option>
+      <option value="4">Superior</option>
+    </select>
+  </div>

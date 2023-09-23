@@ -1,0 +1,14 @@
+CREATE SCHEMA CONFITEC;
+/
+CREATE TABLE Escolaridade
+(
+ IdEscolaridade  INT NOT NULL IDENTITY(1,1),
+ Descricao VARCHAR(40) NOT NULL,
+ 
+ PRIMARY KEY (IdEscolaridade);
+)
+/
+insert into Escolaridade (Descricao) values('Infantil');
+insert into Escolaridade (Descricao) values('Fundamental');
+insert into Escolaridade (Descricao) values('Médio');
+insert into Escolaridade (Descricao) values('Superior');

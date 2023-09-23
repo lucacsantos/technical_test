@@ -1,0 +1,13 @@
+CREATE TABLE Usuario
+(
+ IdUsuario INT NOT NULL IDENTITY(1,1),
+ IdEscolaridade INT NOT NULL,
+ Nome VARCHAR(20),
+ Sobrenome VARCHAR(100),
+ Email VARCHAR(50),
+ DataNascimento Date
+ 
+ PRIMARY KEY (IdUsuario),
+ FOREIGN KEY (IdEscolaridade)
+ REFERENCES Escolaridade (IdEscolaridade)ON DELETE CASCADE
+)

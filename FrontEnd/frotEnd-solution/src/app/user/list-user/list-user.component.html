@@ -1,0 +1,49 @@
+<div class="jumbotron">
+  <h1 >Usuários</h1>
+</div>
+
+<div class="container">
+  <nav class="level">
+    <div class="level-left">
+      <p class="level-item">
+        <a class="btn btn-info" (click) = "create()">Novo</a>
+      </p>
+    </div>
+  </nav>
+  <table class="table is-hoverable is-fullwidth">
+    <thead>
+        <tr>
+          <th>Nome</th>
+          <th>sobreNome</th>
+          <th>Email</th>
+          <th>Descrição</th>
+          <th>Data de Nascimento</th>
+          <th>Actions</th>
+        </tr>
+    </thead>
+    <tfoot>
+        
+    </tfoot>
+    <tbody>
+        <tr *ngFor="let user of gridService.getData()">
+            <td>{{user.nome}}</td>
+            <td>{{user.sobreNome}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.descricao}}</td>
+            <td>{{user.dataNascimento | date : 'dd/MM/yyyy'}}</td>
+
+            <td>
+                <div class="buttons">
+                <a>
+                  <button class="btn btn-link" (click) = edit(user) >Editar</button>
+                </a>
+                <a>
+                  <button class="btn btn-link" (click) = delete(user) >Deletar</button>
+                </a>
+                </div>
+            </td>
+                               
+        </tr>
+    </tbody>
+</table>
+</div>
